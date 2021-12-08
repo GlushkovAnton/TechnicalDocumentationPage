@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+
+  <meta charset="UTF-8">
+  
+
+  <title>Technical Documentation Page Anton</title>
+
+  <link rel="stylesheet" href="./index.css">
+  
+  
+  
+  
+
+
+  
+
+
+</head>
+
+<body translate="no" >
+  <nav id="navbar">
+  <header>Python Documentation</header>
+  <ul>
+    <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+    <li>
+      <a class="nav-link" href="#Using_the_Python_Interpreter">Using the Python Interpreter</a>
+    </li>
+    <li>
+      <a class="nav-link" href="#Invoking_the_Interpreter">Invoking the Interpreter</a>
+    </li>
+    <li><a class="nav-link" href="#Argument_Passing">Argument Passing</a></li>
+    <li><a class="nav-link" href="#Interactive_Mode">Interactive Mode</a></li>
+    <li>
+      <a class="nav-link" href="#The_Interpreter_and_Its_Environment">The Interpreter and Its Environment</a>
+    </li>
+    <li><a class="nav-link" href="#Source_Code_Encoding">Source Code Encoding</a></li>
+    <li><a class="nav-link" href="#Reference">Reference</a></li>
+  </ul>
+</nav>
+<main id="main-doc">
+  <section class="main-section" id="Introduction">
+    <header>Introduction</header>
+    <article>
+      <p>
+        Python is an easy to learn, powerful programming language. It has efficient high-level data structures 
+        and a simple but effective approach to object-oriented programming. Python’s elegant syntax and dynamic 
+        typing, together with its interpreted nature, make it an ideal language for scripting and rapid application 
+        development in many areas on most platforms.
+      </p>
+
+      <p>
+        The Python interpreter and the extensive standard library are freely available in source or binary form for 
+        all major platforms from the Python Web site, <a href="https://www.python.org/" target="_blank">https://www.python.org/</a>, and may be freely distributed. The 
+        same site also contains distributions of and pointers to many free third party Python modules, programs 
+        and tools, and additional documentation.
+      </p>
+
+      <p>
+        The Python interpreter is easily extended with new functions and data types implemented in C or C++ (or other languages callable from C). Python is also suitable 
+        as an extension language for customizable applications.
+      </p>
+
+      <p>
+        This tutorial introduces the reader informally to the basic concepts and features of the Python language and system. It helps to have a Python interpreter handy 
+        for hands-on experience, but all examples are self-contained, so the tutorial can be read off-line as well.
+      </p>
+    </article>
+  </section>
+  <section class="main-section" id="Using_the_Python_Interpreter">
+    <header>Using the Python Interpreter</header>
+    <article>
+      <p>In this section we write to you about use the Python Interpreter</p>
+
+      <ul>
+        <li>
+          Invoking the Interpreter.
+        </li>
+        <li>
+          Argument Passing.
+        </li>
+        <li>
+          Interactive Mode.
+        </li>
+        
+      </ul>
+    </article>
+  </section>
+  <section class="main-section" id="Invoking_the_Interpreter">
+    <header>Invoking the Interpreter</header>
+    <article>
+      <p>
+        The Python interpreter is usually installed as 
+        /usr/local/bin/python3.9 on those machines where it is available; 
+        putting /usr/local/bin in your Unix shell’s search path makes it 
+        possible to start it by typing the command:.
+      </p>
+
+      <code>
+        python3.9
+      </code>
+
+      <p>
+        to the shell. 1 Since the choice of the directory where the interpreter 
+        lives is an installation option, other places are possible; check with 
+        your local Python guru or system administrator. (E.g., /usr/local/python 
+        is a popular alternative location.).
+      </p>
+
+      <p>
+        On Windows machines where you have installed Python from the Microsoft Store, 
+        the python3.9 command will be available. If you have the py.exe launcher installed, 
+        you can use the py command. See Excursus: Setting environment variables for other 
+        ways to launch Python.
+      </p>
+
+      <p>
+        On Windows machines where you have installed Python from the Microsoft Store, the python3.9 
+        command will be available. If you have the py.exe launcher installed, you can use the py 
+        command. See Excursus: Setting environment variables for other ways to launch Python.
+      </p>
+
+      <p>
+        Typing an end-of-file character (Control-D on Unix, Control-Z on Windows) at the primary prompt 
+        causes the interpreter to exit with a zero exit status. If that doesn’t work, you can exit 
+        the interpreter by typing the following command: quit().
+      </p>
+
+      <p>
+        The interpreter’s line-editing features include interactive editing, history substitution and 
+        code completion on systems that support the GNU Readline library. Perhaps the quickest check 
+        to see whether command line editing is supported is typing Control-P to the first Python 
+        prompt you get. If it beeps, you have command line editing; see Appendix Interactive Input 
+        Editing and History Substitution for an introduction to the keys. If nothing appears to 
+        happen, or if ^P is echoed, command line editing isn’t available; you’ll only be able to 
+        use backspace to remove characters from the current line.
+      </p>
+
+      <p>
+        The interpreter operates somewhat like the Unix shell: when called with standard input connected 
+        to a tty device, it reads and executes commands interactively; when called with a file name 
+        argument or with a file as standard input, it reads and executes a script from that file.
+      </p>
+
+    </article>
+  </section>
+  <section class="main-section" id="Argument_Passing">
+    <header>Argument Passing</header>
+    <article>
+
+      <p>
+        When known to the interpreter, the script name and additional arguments thereafter are turned into 
+        a list of strings and assigned to the argv variable in the sys module. You can access this list 
+        by executing import sys. The length of the list is at least one; when no script and no arguments 
+        are given, sys.argv[0] is an empty string. When the script name is given as '-' (meaning standard 
+        input), sys.argv[0] is set to '-'. When -c command is used, sys.argv[0] is set to '-c'. When -m 
+        module is used, sys.argv[0] is set to the full name of the located module. Options found after -c 
+        command or -m module are not consumed by the Python interpreter’s option processing but left in 
+        sys.argv for the command or module to handle.
+      </p>
+      
+    </article>
+  </section>
+  <section class="main-section" id="Interactive_Mode">
+    <header>Interactive Mode</header>
+    <p>
+      When commands are read from a tty, the interpreter is said to be in interactive mode. In this mode it 
+      prompts for the next command with the primary prompt, usually three greater-than signs (>>>); for 
+      continuation lines it prompts with the secondary prompt, by default three dots (...). The interpreter 
+      prints a welcome message stating its version number and a copyright notice before printing the 
+      first prompt:
+    </p>
+
+    <code>
+      $ python3.9
+      Python 3.9 (default, June 4 2019, 09:25:04)
+      [GCC 4.8.2] on linux
+      Type "help", "copyright", "credits" or "license" for more information.
+      >>>
+    </code>
+
+    <p>
+      Continuation lines are needed when entering a multi-line construct. As an example, take a look 
+      at this if statement:
+    </p>
+
+    <code>
+      >>> the_world_is_flat = True
+      >>> if the_world_is_flat:
+      ...     print("Be careful not to fall off!")
+      ...
+      Be careful not to fall off!
+    </code>
+    <p>
+      For more on interactive mode, see <a href="https://docs.python.org/3/tutorial/appendix.html#tut-interac" target="_blank">Interactive Mode</a>.
+    </p>
+  </section>
+  <section class="main-section" id="The_Interpreter_and_Its_Environment">
+    <header>The Interpreter and Its Environment</header>
+    <article>
+      
+      <p>
+        In this section we write you about Interpreter and Its Environment.
+      </p>
+
+      <p>
+        Will be three actions:
+      </p>
+
+      <ul>
+        <li>
+          declare an encoding.
+        </li>
+        <li>
+          declaration introduced in ECMAScript 2015.
+        </li>
+        <li>
+          declare that Windows-1252 encoding.
+        </li>
+        
+      </ul>
+      
+    </article>
+  </section>
+  <section class="main-section" id="Source_Code_Encoding">
+    <header>Source Code Encoding</header>
+    <article>
+      <p>
+        By default, Python source files are treated as encoded in UTF-8. In 
+        that encoding, characters of most languages in the world can be used 
+        simultaneously in string literals, identifiers and comments — although 
+        the standard library only uses ASCII characters for identifiers, a 
+        convention that any portable code should follow. To display all these 
+        characters properly, your editor must recognize that the file is 
+        UTF-8, and it must use a font that supports all the characters in 
+        the file.
+      </p>
+
+      <p>
+        To declare an encoding other than the default one, a special comment 
+        line should be added as the first line of the file. The syntax is as 
+        follows:
+      </p>
+      <code>if (true) { var x = 5; } console.log(x); // 5</code>
+      <p>
+        This behavior changes, when using the let declaration introduced in
+        ECMAScript 2015.
+      </p>
+
+      <code> # -*- coding: encoding -*-</code>
+
+      <p>
+        where encoding is one of the valid codecs supported by Python.
+      </p>
+
+      <p>
+        For example, to declare that Windows-1252 encoding is to be used, the 
+        first line of your source code file should be:
+      </p>
+
+      <code>
+        # -*- coding: cp1252 -*-
+      </code>
+
+      <p>
+        One exception to the first line rule is when the source code starts with 
+        a UNIX “shebang” line. In this case, the encoding declaration should 
+        be added as the second line of the file. For example:
+      </p>
+
+      <code>
+        #!/usr/bin/env python3
+        # -*- coding: cp1252 -*-
+      </code>
+    </article>
+  </section>
+  
+  <section class="main-section" id="Reference">
+    <header>Reference</header>
+    <article>
+      <ul>
+        <li>
+          All the documentation in this page is taken from
+          <a href="https://docs.python.org/" target="_blank"> Python docs</a>
+        </li>
+      </ul>
+    </article>
+  </section>
+</main>
+    
+
+  
+
+</body>
+
+</html>
+ 
